@@ -48,14 +48,17 @@ void pre_auton(void) {
 void autonomous(void) {
   // ..........................................................................
   // 1. Recolecta el primer ring y lo mantiene con el de recarga
-  moveParabolicV(82, 100, 60, 80);
+  moveParabolicV(82, 100, 60, 65);
   // 2. Vuelve a la estaca del color y pone ambos rings
-  moveParabolic(70, -100, -40);
-  // 3. Lo junta a la pared para alinear la recoleccion
-  moveDistanceN(5,-100);
-  // 4. Pone los Rings en la estaca de color
-  recoleccion(100,2);
-
+  //ANTES   moveParabolic(50, -92, -98);
+  //Funciona con -96 y -97
+  moveParabolic(12.55, -76, -87);
+  // 3. Pone los dos rings en la estaca de color
+  recoleccion(100, 1.5);
+  // 4. Se acomoda para ir por la estaca
+  moveParabolic(40, 100, 3);
+  // 5. Va por la estaca
+  moveParabolic(40, 10, 100);
   // ..........................................................................
 }
 
