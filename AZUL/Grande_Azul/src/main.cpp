@@ -47,18 +47,29 @@ void pre_auton(void) {
 
 void autonomous(void) {
   // ..........................................................................
+  //PASO 1
   // 1. Recolecta el primer ring y lo mantiene con el de recarga
-  moveParabolicV(82, 100, 60, 65);
+  moveParabolicV(82, 100, 60, 68);
   // 2. Vuelve a la estaca del color y pone ambos rings
-  //ANTES   moveParabolic(50, -92, -98);
-  //Funciona con -96 y -97
   moveParabolic(12.55, -76, -87);
   // 3. Pone los dos rings en la estaca de color
-  recoleccion(100, 1.5);
+  recoleccion(100, 2);
+
+  //PASO 2
   // 4. Se acomoda para ir por la estaca
-  moveParabolic(40, 100, 3);
-  // 5. Va por la estaca
-  moveParabolic(40, 10, 100);
+  moveDistance(10, 50);
+  rotateOnAxis(40, 98);
+  //5. Recoge la estaca 
+  moveDistance(33, -93);
+  Pinza.open();
+  //HASTA AQUI VA RELATIVAMENTE BIEN
+  rotateOnAxis(77, 95);
+
+  //PASO 3
+  //Va por los otros dos rings
+  moveDistanceN(50, 100);
+
+
   // ..........................................................................
 }
 
