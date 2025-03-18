@@ -47,10 +47,14 @@ void pre_auton(void) {
 
 void autonomous(void) {
     // Paso 1: Comienza con 1 anillo de precarga en la pinza, toma el anillo de en frente con la pinza y pone ambos en la estaca de color
-    move(25, 100, 1.0, 0.8, true, true, false, false);
+    move(50, 100, 1.0, 0.4, true, true, false, false);
+    move(25, 100, 1.0, 1.0, false, false, false, false);
+    recoleccion(100, 0.5);
 
     // Paso 2: Toma la estaca
-    rotateOnAxis(260, -100, false);
+    Pinza.close();
+    move(65, -100, 1.0, 0.4, false, false, false, false);
+    Pinza.open();
 
 }
 
@@ -97,11 +101,11 @@ void usercontrol(void) {
 
     // Control del motor recolector y rampa usando L1 y L2
     if (Controller1.ButtonX.pressing()) {
-        Garra.spin(directionType::fwd, 100, velocityUnits::pct);
+        //Garra.spin(directionType::fwd, 100, velocityUnits::pct);
     } else if (Controller1.ButtonA.pressing()) {
-        Garra.spin(directionType::rev, 100, velocityUnits::pct);
+        //Garra.spin(directionType::rev, 100, velocityUnits::pct);
     } else {
-        Garra.stop(brakeType::hold);
+        //Garra.stop(brakeType::hold);
     }
 
     if(Controller1.ButtonR2.pressing())

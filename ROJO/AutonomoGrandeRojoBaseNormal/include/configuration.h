@@ -44,11 +44,11 @@ motor MotorR4(PORT10, false);
 motor_group Right(MotorR1, MotorR2, MotorR3, MotorR4);
 
 // Motor para el sistema de recolección
-motor Rec1(PORT6, true);
+motor Rec1(PORT13, true);
 motor Rec2(PORT5, false);
 motor_group Recolector(Rec1, Rec2);
 motor Rampa(PORT12, true);
-motor Garra(PORT13, true);
+//motor Garra(PORT13, true);
 
 
 vex::pneumatics Pinza(Brain.ThreeWirePort.A);

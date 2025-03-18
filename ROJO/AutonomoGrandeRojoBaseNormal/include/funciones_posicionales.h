@@ -49,7 +49,7 @@ void stopAllMotors() {
     MotorR4.stop();
     Recolector.stop();
     Rampa.stop();
-    Garra.stop();
+    //Garra.stop();
 }
 
 void move(double distanceInInches, double speed, double leftSpeedFactor = 1.0, double rightSpeedFactor = 1.0, bool useRecolector = false, bool useRampa = false, bool openRecolectorNeumatica = false, bool closeRecolectorNeumatica = false) {
@@ -106,7 +106,7 @@ void recoleccion(int speed, double duration) {
 }
 
 void garrita(int speed, double duration) {
-    Garra.spin(reverse, speed, percent);
+    //Garra.spin(reverse, speed, percent);
     task::sleep(duration * 1000); // Convertimos segundos a milisegundos
     stopAllMotors();
 }
