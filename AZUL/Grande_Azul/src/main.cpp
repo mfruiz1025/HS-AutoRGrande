@@ -1,11 +1,11 @@
-/*----------------------------------------------------------------------------*/
+/----------------------------------------------------------------------------/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
 /*    Author:       USER                                                      */
 /*    Created:      3/7/2025, 6:31:15 PM                                      */
 /*    Description:  V5 project                                                */
 /*                                                                            */
-/*----------------------------------------------------------------------------*/
+/----------------------------------------------------------------------------/
 
 #include "vex.h"
 #include "configuration.h"
@@ -19,7 +19,7 @@ competition Competition;
 
 // define your global instances of motors and other devices here
 
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 /*                          Pre-Autonomous Functions                         */
 /*                                                                           */
 /*  You may want to perform some actions before the competition starts.      */
@@ -27,7 +27,7 @@ competition Competition;
 /*  or the autonomous and usercontrol tasks will not be started.  This       */
 /*  function is only called once after the V5 has been powered on and        */
 /*  not every time that the robot is disabled.                               */
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 
 void pre_auton(void) {
 
@@ -35,7 +35,7 @@ void pre_auton(void) {
   // Example: clearing encoders, setting servo positions, ...
 }
 
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 /*                                                                           */
 /*                              Autonomous Task                              */
 /*                                                                           */
@@ -43,7 +43,7 @@ void pre_auton(void) {
 /*  a VEX Competition.                                                       */
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 
 void autonomous(void) {
   // ..........................................................................
@@ -91,7 +91,7 @@ void autonomous(void) {
   // ..........................................................................
 }
 
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 /*                                                                           */
 /*                              User Control Task                            */
 /*                                                                           */
@@ -99,7 +99,7 @@ void autonomous(void) {
 /*  a VEX Competition.                                                       */
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
-/*---------------------------------------------------------------------------*/
+/---------------------------------------------------------------------------/
 
 void usercontrol(void) {
   // User control code here, inside the loop
