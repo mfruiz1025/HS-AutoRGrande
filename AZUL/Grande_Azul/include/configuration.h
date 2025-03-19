@@ -1,7 +1,6 @@
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
 /*    Author:       Kenneth Bustamante                                        */
-/*    Created:      14/3/2024, 11:48:05                                       */
 /*    Description:  V5 project                                                */
 /*                                                                            */
 
@@ -45,11 +44,11 @@ motor MotorR4(PORT10, false);
 motor_group Right(MotorR1, MotorR2, MotorR3, MotorR4);
 
 // Motor para el sistema de recolección
-motor Rec1(PORT6, true);
+motor Rec1(PORT12, true);
 motor Rec2(PORT5, false);
-motor_group Recolector(Rec1, Rec2);
-motor Rampa(PORT12, true);
-motor Garra(PORT13, true);
+motor_group Rampa(Rec1, Rec2);
+motor Recolector(PORT13, true);
+motor Garra(PORT3, true);
 
 
 vex::pneumatics Pinza(Brain.ThreeWirePort.A);
