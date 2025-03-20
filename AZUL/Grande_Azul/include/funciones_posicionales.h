@@ -187,7 +187,7 @@ void rotateOnAxis(double angleInDegrees, double speed) {
     stopAllMotors();
 }
 
-void rotateOnAxisN(double angleInDegrees, double speed) {
+void rotateOnAxisB(double angleInDegrees, double speed) {
     resetEncoders();
 
     double targetRotations = (angleInDegrees / 360) * (TRACK_WIDTH * M_PI / WHEEL_DIAMETER) * 360;
@@ -209,8 +209,6 @@ void moveDistanceN(double distanceInInches, double speed) {
 
     Recolector.spin(reverse, speed, percent);
     Rampa.spin(reverse, speed, percent);
-
-    RecolectorNeumatica.close();
 
     distanceInInches = (1.0 - RELATIVE_DISTANCE_ERROR) * distanceInInches;
 
@@ -250,28 +248,9 @@ void moveDistanceB(double distanceInInches, double speed) {
     
 }
 
-void turnAngle(double angleInDegrees, double speed) {
-    resetEncoders();
-    double targetRotations = (angleInDegrees / 360) * (TRACK_WIDTH * M_PI / WHEEL_DIAMETER) * 360;
-
-    setLeftMotors((angleInDegrees > 0) ? speed : -speed);
-    setRightMotors((angleInDegrees > 0) ? -speed : speed);
-
-    while ( (fabs(MotorL1.position(rotationUnits::deg)) < targetRotations) && (fabs(MotorR1.position(rotationUnits::deg)) < targetRotations) ) {
-        task::sleep(10);
-    }
-    stopAllMotors();
-}
-
 void recoleccion(int speed,double duration) {
   Recolector.spin(reverse, speed, percent);
   Rampa.spin(reverse, speed, percent);
-  wait(duration, seconds);
-  stopAllMotors();
-}
-
-void garrita(int speed,double duration) {
-  //Garra.spin(reverse, speed, percent);
   wait(duration, seconds);
   stopAllMotors();
 }
