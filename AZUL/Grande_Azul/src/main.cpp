@@ -47,24 +47,24 @@ void autonomous(void) {
   // ..........................................................................
   //PASO 1
   // 1. Recolecta el primer ring y lo mantiene con el de recarga
-  moveParabolicV(81, 80, 67, 67);
+  moveParabolicV(81, 80, 67, 66);
   // 2. Vuelve a la estaca del color y pone ambos rings
-  moveParabolic(19, -95.5, -98);
+  moveParabolic(19, -95.5, -99);
   // 3. Pone los dos rings en la estaca de color
   recoleccion(100, 2);
   //PASO 2
   // 4. Se acomoda para ir por la estaca
   moveDistance(10, 50);
-  rotateOnAxis(37, 98);
+  rotateOnAxis(36, 98);
   //5. Recoge la estaca 
-  moveDistance(37, -93);
+  moveDistance(38, -93);
   Pinza.open();
   //6. Se acomoda para ir por el ring de arriba
-  rotateOnAxis(78, 96);
+  rotateOnAxis(73, 96);
   //PASO 3
   //Va por los otros dos rings
   RecolectorNeumatica.open();
-  moveDistanceN(21, 100);
+  moveDistanceN(22, 100);
   // Recolecta la dona azul de arriba 
   moveDistance(5, 50);
   RecolectorNeumatica.close();
@@ -81,7 +81,6 @@ void autonomous(void) {
   moveDistanceB(20, 100);
   //PASO 6
   //. Deja la estaca y se dirige a tocar la escalera
-  /*
   rotateOnAxis(70, 100);
   Pinza.close(); 
   brazo.close(); 

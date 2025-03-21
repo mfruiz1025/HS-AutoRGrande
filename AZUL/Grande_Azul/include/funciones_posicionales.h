@@ -147,7 +147,6 @@ void moveParabolicN(double distanceInInches, double speedleft, double speedRight
         task::sleep(10);
     }
     stopAllMotors();
-    
 }
 
 void moveParabolicNC(double distanceInInches, double speedleft, double speedRight, double speed) {
@@ -171,7 +170,6 @@ void moveParabolicNC(double distanceInInches, double speedleft, double speedRigh
         task::sleep(10);
     }
     stopAllMotors();
-    
 }
 
 void rotateOnAxis(double angleInDegrees, double speed) {
@@ -201,7 +199,6 @@ void rotateOnAxisB(double angleInDegrees, double speed) {
         task::sleep(10);
     }
     stopAllMotors();
-    
 }
 
 void moveDistanceN(double distanceInInches, double speed) {
@@ -222,9 +219,6 @@ void moveDistanceN(double distanceInInches, double speed) {
         task::sleep(10);
     }
     stopAllMotors();
-    
-
-    
 }
 
 void moveDistanceB(double distanceInInches, double speed) {
@@ -245,7 +239,6 @@ void moveDistanceB(double distanceInInches, double speed) {
     }
     stopAllMotors();
     RecolectorNeumatica.open();
-    
 }
 
 void recoleccion(int speed,double duration) {
