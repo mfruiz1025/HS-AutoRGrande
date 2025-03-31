@@ -1,4 +1,3 @@
-
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
 /*    Author:       USER                                                      */
@@ -47,44 +46,54 @@ void autonomous(void) {
   // ..........................................................................
   //PASO 1
   // 1. Recolecta el primer ring y lo mantiene con el de recarga
-  moveParabolicV(81, 80, 67, 66);
+  moveParabolicV(82, 80, 67, 67);
   // 2. Vuelve a la estaca del color y pone ambos rings
-  moveParabolic(19, -95.5, -99);
+  moveParabolic(18, -95.5, -98);
   // 3. Pone los dos rings en la estaca de color
   recoleccion(100, 2);
+
   //PASO 2
   // 4. Se acomoda para ir por la estaca
   moveDistance(10, 50);
-  rotateOnAxis(36, 98);
+  rotateOnAxis(34, 98);
   //5. Recoge la estaca 
-  moveDistance(38, -93);
+  moveDistance(37, -93);
   Pinza.open();
   //6. Se acomoda para ir por el ring de arriba
-  rotateOnAxis(73, 96);
+  rotateOnAxis(72, 97);
+
   //PASO 3
-  //Va por los otros dos rings
+  //7. Va por los otros dos rings
   RecolectorNeumatica.open();
-  moveDistanceN(22, 100);
-  // Recolecta la dona azul de arriba 
-  moveDistance(5, 50);
+  moveDistance(39, 98);
+  // 8. Recolecta la dona azul de arriba 
   RecolectorNeumatica.close();
+  recoleccion(96, 2.5);
+
   //PASO 4
-  //. Recolecta  la dona de abajo
-  /*
-  moveDistanceN(10, 100);
-  rotateOnAxis(25,-100);
-  moveDistance(35,100);
-  recoleccion(100, 3);
+  //9. Va por la dona de abajo 
+  rotateOnAxis(31,-98);
+  moveParabolicV(45, 90, 75, 99);
+  recoleccion(99, 2);
+
   //PASO 5
-  //. Va a la esquina a tumbar la pila de las donas y las recoge
-  rotateOnAxis(15, 100);
-  moveDistanceB(20, 100);
+  //10. Se acomoda para ir por los rings de la esquina
+  rotateOnAxis(10,95);
+
+  //11. Va y tumba las donas de la esquina
+  moveDistance(15, 96);
+  brazo.open();
+  rotateOnAxis(58, 50);
+
+  //12. Deja la estaca en la esquina positiva 
+  moveDistance(15, -85);
+  Pinza.close();
+
   //PASO 6
-  //. Deja la estaca y se dirige a tocar la escalera
-  rotateOnAxis(70, 100);
-  Pinza.close(); 
-  brazo.close(); 
-  moveDistance(50, 100);*/
+  //13. Se dirige a la escalera
+  brazo.close();
+  moveDistance(43, 100);
+
   // ..........................................................................
 }
 
